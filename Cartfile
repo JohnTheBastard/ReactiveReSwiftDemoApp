@@ -3,3 +3,6 @@ github "ReactiveCocoa/ReactiveSwift"
 github "ReactiveCocoa/ReactiveCocoa"
 github "ReSwift/ReSwift"
 github "ReSwift/ReactiveReSwift"
+
+github "Quick/Quick"
+github "Quick/Nimble"
