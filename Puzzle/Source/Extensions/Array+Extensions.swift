@@ -3,6 +3,14 @@
 
 import UIKit
 
+extension Array {
+    var shuffled: [Element] {
+        return self.map    { (arc4random(), $0) }
+                   .sorted { $0.0 < $1.0 }
+                   .map    { $0.1 }
+    }
+}
+
 extension Array where Element: Equatable {
     // Remove first collection element that is equal to the given object
     mutating func remove(object: Element) {
