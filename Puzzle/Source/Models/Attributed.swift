@@ -23,14 +23,14 @@ enum Attributed {
         switch self {
         case .title:
             return [ NSAttributedStringKey.font: UIFont.init(name: "Helvetica", size: 24)!,
-                     NSAttributedStringKey.foregroundColor: Colors.white.color ]
+                     NSAttributedStringKey.foregroundColor: Colors.white.uiColor ]
         case .subtitle:
             return [ NSAttributedStringKey.font: UIFont.init(name: "Helvetica", size: 12)!,
-                     NSAttributedStringKey.foregroundColor: Colors.white.color,
+                     NSAttributedStringKey.foregroundColor: Colors.white.uiColor,
                      NSAttributedStringKey.kern: CGFloat(2) ]
         case .value:
             return [ NSAttributedStringKey.font: UIFont.init(name: "Helvetica", size: 48)!,
-                     NSAttributedStringKey.foregroundColor: Colors.white.color ]
+                     NSAttributedStringKey.foregroundColor: Colors.white.uiColor ]
         }
     }
 

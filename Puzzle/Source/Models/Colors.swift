@@ -12,7 +12,7 @@ enum Colors: EnumCollection {
     case white
     case clear
 
-    var color: UIColor {
+    var uiColor: UIColor {
         switch self {
         case .blue:
             return #colorLiteral(red: 0, green: 0.4509803922, blue: 0.7294117647, alpha: 1)
@@ -32,6 +32,6 @@ enum Colors: EnumCollection {
     }
 
     var cgColor: CGColor {
-        return self.color.cgColor
+        return self.uiColor.cgColor
     }
 }
