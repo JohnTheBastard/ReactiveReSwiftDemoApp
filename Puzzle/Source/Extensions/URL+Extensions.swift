@@ -10,9 +10,7 @@ extension URL {
         }
 
         var dict: [String:String] = [:]
-        for parameter in queryItems {
-            dict[parameter.name] = parameter.value
-        }
+        queryItems.forEach { dict[$0.name] = $0.value }
         return dict
     }
 }

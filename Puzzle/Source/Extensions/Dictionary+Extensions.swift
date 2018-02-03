@@ -13,7 +13,7 @@ extension Dictionary {
         let keys = optionalKeys.flatMap { $0 }
         guard !keys.isEmpty else { return nil }
 
-        return keys.map { key in self[key] }
+        return keys.map { self[$0] }
                    .flatMap { $0 }
     }
 
