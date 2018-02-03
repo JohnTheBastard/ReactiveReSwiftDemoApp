@@ -7,7 +7,7 @@ import ReactiveSwift
 import ReactiveCocoa
 
 extension UITextView {
-    public var allTextValues: SignalProducer<String?, NoError> {
+    var allTextValues: SignalProducer<String?, NoError> {
         let text = self.text
         return SignalProducer<String?, NoError>(value: text)
             .concat(SignalProducer<String?, NoError> { [unowned self] (observer, _) in

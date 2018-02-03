@@ -160,7 +160,7 @@ extension UIView {
         }
     }
 
-    public func makeRound(masksToBounds: Bool = true) {
+    func makeRound(masksToBounds: Bool = true) {
         layer.masksToBounds = masksToBounds
         layer.cornerRadius = self.halfWidth
     }

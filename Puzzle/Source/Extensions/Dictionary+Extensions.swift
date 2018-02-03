@@ -29,7 +29,7 @@ extension Dictionary {
         return self.removeValue(forKey: key)
     }
 
-    public static func +=(lhs: inout [Key: Value], rhs: [Key: Value]) {
+    static func +=(lhs: inout [Key: Value], rhs: [Key: Value]) {
         rhs.forEach { lhs[$0] = $1}
     }
 }

@@ -13,17 +13,17 @@ extension SignalProducer {
         return empty.delay(interval)
     }
 
-    public func startingWith(value: Value) -> SignalProducer<Value, Error> {
+    func startingWith(value: Value) -> SignalProducer<Value, Error> {
         return SignalProducer<Value, Error>(value: value).concat(self.producer)
     }
 
-    public func deferred(interval: TimeInterval) -> SignalProducer<Value, Error> {
+    func deferred(interval: TimeInterval) -> SignalProducer<Value, Error> {
         return SignalProducer.empty
             .delay(interval)
             .concat(self.producer)
     }
 
-    public func deferredRetry(interval: TimeInterval, count: Int = .max) -> SignalProducer<Value, Error> {
+    func deferredRetry(interval: TimeInterval, count: Int = .max) -> SignalProducer<Value, Error> {
         precondition(count >= 0)
 
         if count == 0 {

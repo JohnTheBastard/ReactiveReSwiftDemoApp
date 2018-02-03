@@ -3,24 +3,24 @@
 
 import Foundation
 
-public extension NSObject {
-    public static var objectIdentifier: String {
+ extension NSObject {
+     static var objectIdentifier: String {
         return self.description()
     }
 
-    public static var namespace: String {
+    static var namespace: String {
         return NSStringFromClass(self).components(separatedBy: ".").first!
     }
 
-    public var namespace: String {
+    var namespace: String {
         return NSStringFromClass(type(of: self)).components(separatedBy: ".").first!
     }
 
-    public static var objectName: String {
+    static var objectName: String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
 
-    public var objectName: String {
+    var objectName: String {
         return type(of: self).description().components(separatedBy: ".").last!
     }
 }

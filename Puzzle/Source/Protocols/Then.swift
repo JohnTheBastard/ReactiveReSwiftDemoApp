@@ -5,14 +5,14 @@ import UIKit
 import CoreGraphics
 import ReactiveSwift
 
-public protocol Then {}
+protocol Then {}
 
 extension Then where Self: AnyObject {
 
     /// Allow properties to be set within a closure
     /// scope immediately after initializing.
     @discardableResult
-    public func then(_ block: (Self) -> Void) -> Self {
+    func then(_ block: (Self) -> Void) -> Self {
         block(self)
         return self
     }
