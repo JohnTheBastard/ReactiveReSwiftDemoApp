@@ -5,10 +5,10 @@ import UIKit
 let ClosureHandlerSelector = Selector(("handle"))
 
 class ClosureHandler<T: AnyObject>: NSObject {
-    internal var handler: ((T) -> Void)?
-    internal weak var control: T?
+    var handler: ((T) -> Void)?
+    weak var control: T?
 
-    internal init(handler: @escaping (T) -> Void, control: T? = nil) {
+    init(handler: @escaping (T) -> Void, control: T? = nil) {
         self.handler = handler
         self.control = control
     }

@@ -5,12 +5,12 @@ import UIKit
 private var HandlerKey: UInt8 = 0
 
 extension UIBarButtonItem {
-    internal var closureHandler: ClosureHandler<UIBarButtonItem>? {
+    var closureHandler: ClosureHandler<UIBarButtonItem>? {
         get { return objc_getAssociatedObject(self, &HandlerKey) as? ClosureHandler<UIBarButtonItem> }
         set { objc_setAssociatedObject(self, &HandlerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
-    internal func initClosureHandler(_ handler: ((UIBarButtonItem) -> Void)?) {
+    func initClosureHandler(_ handler: ((UIBarButtonItem) -> Void)?) {
         if let handler = handler {
             closureHandler = ClosureHandler(handler: handler, control: self)
             target = closureHandler
