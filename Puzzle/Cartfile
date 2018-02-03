@@ -1,0 +1,13 @@
+github "antitypical/Result"
+github "ReactiveCocoa/ReactiveSwift"
+github "ReactiveCocoa/ReactiveCocoa"
+github "ReSwift/ReSwift"
+github "ReSwift/ReactiveReSwift"
+
+github "Quick/Quick"
+github "Quick/Nimble"
+
+# temp
+#github "daidongon/SwiftyUserDefaults" "9bf849504fa7b7f75bb85cb73cef67d6a45a3c62"
+github "radex/SwiftyUserDefaults" "master"
+github "PureLayout/PureLayout"
