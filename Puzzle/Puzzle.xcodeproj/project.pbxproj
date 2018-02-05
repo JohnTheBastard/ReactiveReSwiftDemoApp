@@ -225,6 +225,7 @@
 				F297E5CE2022BA780051110D /* Frameworks */,
 				52165BDD202554DE008100BE /* Cartfile */,
 				52165BDE202554DE008100BE /* Cartfile.resolved */,
+				F297E5AA2022B6920051110D /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,7 +252,6 @@
 				F297E5A22022B6920051110D /* Main.storyboard */,
 				F297E5A52022B6920051110D /* Assets.xcassets */,
 				F297E5A72022B6920051110D /* LaunchScreen.storyboard */,
-				F297E5AA2022B6920051110D /* Info.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -672,7 +672,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BastardizedProductions.Puzzle;
@@ -693,7 +693,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BastardizedProductions.Puzzle;
