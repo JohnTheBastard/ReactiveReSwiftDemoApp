@@ -1,13 +1,14 @@
-github "antitypical/Result"
-github "ReactiveCocoa/ReactiveSwift"
-github "ReactiveCocoa/ReactiveCocoa"
-github "ReSwift/ReSwift"
-github "ReSwift/ReactiveReSwift"
-
-github "Quick/Quick"
-github "Quick/Nimble"
-
-# temp
-#github "daidongon/SwiftyUserDefaults" "9bf849504fa7b7f75bb85cb73cef67d6a45a3c62"
+# conveniences
+github "PureLayout/PureLayout" ~> 3.0
 github "radex/SwiftyUserDefaults" "master"
-github "PureLayout/PureLayout"
+
+# the stuff we actually care about
+github "ReSwift/ReSwift" ~> 4.0
+github "ReSwift/ReactiveReSwift" ~> 4.0
+github "ReactiveCocoa/ReactiveSwift" ~> 3.1
+github "ReactiveCocoa/ReactiveCocoa" ~> 7.1
+github "antitypical/Result" ~> 3.2
+
+# for testing purposes
+github "Quick/Quick" ~> 7.0
+github "Quick/Nimble" ~> 1.2
