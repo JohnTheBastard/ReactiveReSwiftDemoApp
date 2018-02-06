@@ -30,8 +30,7 @@ extension Dictionary where Key==Piece, Value==Position {
         return pieces.first!
     }
 
-    //TODO: Call this something else
-    mutating func handleTap(_ position: Position) {
+    mutating func interact(at position: Position) {
         guard let gapPosition = self[.gap], position != gapPosition else { return }
 
         if position.column == gapPosition.column {
@@ -39,6 +38,14 @@ extension Dictionary where Key==Piece, Value==Position {
         } else if position.row == gapPosition.row {
             self.mutateColumn(at: position)
         }
+    }
+
+    static func ==(lhs: [Piece: Position], rhs: [Piece: Position] ) -> Bool {
+        guard lhs.count == rhs.count else { return false }
+
+        let unmatched = lhs.keys.filter { lhs[$0] != rhs[$0] }
+
+        return unmatched.isEmpty
     }
 }
 

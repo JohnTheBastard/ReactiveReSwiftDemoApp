@@ -3,13 +3,18 @@
 
 import Foundation
 
-enum Piece {
+enum Piece: Hashable {
     case gap
     case number(Int)
     case complete
-}
 
-extension Piece: Hashable {
+    static var all: [Piece] {
+        return [ .number(1), .number(2), .number(3),
+                 .number(4), .number(5), .number(6),
+                 .number(7), .number(8), .gap ]
+    }
+
+    //MARK: Hashable conformance
     static func ==(lhs: Piece, rhs: Piece) -> Bool {
         switch (lhs, rhs) {
         case (.gap, .gap), (.complete, .complete):
@@ -27,11 +32,5 @@ extension Piece: Hashable {
         case .number(let value): return value
         case .complete:          return 9
         }
-    }
-
-    static var all: [Piece] {
-        return [ .number(1), .number(2), .number(3),
-                 .number(4), .number(5), .number(6),
-                 .number(7), .number(8), .gap ]
     }
 }

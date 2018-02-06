@@ -7,7 +7,7 @@ import ReSwift
 fileprivate func tapReducer(tap position: Position, state: PuzzleState) -> PuzzleState {
     var mutableState = state
 
-    mutableState.puzzle.handleTap(position)
+    mutableState.puzzle.interact(at: position)
 
     return mutableState
 }
