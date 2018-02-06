@@ -8,7 +8,7 @@ enum Piece {
     case number(Int)
     case complete
 
-    static var solution: [Piece] {
+    static var ordered: [Piece] {
         return [ .number(1), .number(2), .number(3),
                  .number(4), .number(5), .number(6),
                  .number(7), .number(8), .gap ]

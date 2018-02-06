@@ -1,25 +1,50 @@
 //  Created by John D Hearn on 2/5/18.
 //  Copyright © 2018 Bastardized Productions. All rights reserved.
 
-import Foundation
-
 /**
     All the logic for the puzzle lives here.
  */
 
+import Foundation
+
 typealias Puzzle = [Piece:Position]
 
-//MARK: Public Puzzle Methods
+//MARK: Public Puzzle Properties and Methods
 extension Dictionary where Key==Piece, Value==Position {
-    func findPiece(at position: Position) -> Piece? {
-        let pieces = self.filter { $0.value == position}
+    static var solution: Puzzle {
+        let pieces = Piece.ordered
+        let positions = Position.ordered
+        var puzzle = Puzzle()
 
-        guard pieces.count == 1,
-            let piece = pieces.first?.key else { return nil }
+        pieces.enumerated().forEach { (index, piece) in
+            puzzle[piece] = positions[index]
+        }
+
+        return puzzle
+    }
+
+    static var shuffled: Puzzle {
+        let pieces = Piece.ordered.shuffled
+        let positions = Position.ordered
+        var puzzle = Puzzle()
+
+        pieces.enumerated().forEach { (index, piece) in
+            puzzle[piece] = positions[index]
+        }
+
+        return puzzle
+    }
+
+    func findPiece(at position: Position) -> Piece? {
+        let pieces = self.findKeys(for: position)
+
+        //We should have exactly one piece per position
+        guard let piece = pieces.first, pieces.count == 1 else { return nil }
 
         return piece
     }
 
+    //TODO: Call this something else
     mutating func handleTap(_ position: Position) {
         guard let gapPosition = self[.gap], position != gapPosition else { return }
 
@@ -64,7 +89,6 @@ private extension Dictionary where Key==Piece, Value==Position {
         self[left]   = Position(position.row, .left)
         self[center] = Position(position.row, .center)
         self[right]  = Position(position.row, .right)
-
     }
 
     private mutating func mutateColumn(at position: Position) {
@@ -83,10 +107,10 @@ private extension Dictionary where Key==Piece, Value==Position {
         private(set) var b: Piece
         private(set) var c: Piece
 
-        var rollRight: Triple { return Triple(c,a,b) }
-        var rollLeft:  Triple { return Triple(b,c,a) }
-        var swapLeft:  Triple { return Triple(b,a,c) }
-        var swapRight: Triple { return Triple(a,c,b) }
+        private var rollRight: Triple { return Triple(c,a,b) }
+        private var rollLeft:  Triple { return Triple(b,c,a) }
+        private var swapLeft:  Triple { return Triple(b,a,c) }
+        private var swapRight: Triple { return Triple(a,c,b) }
 
         var asTuple: (Piece, Piece, Piece) { return (self.a, self.b, self.c) }
 
@@ -110,4 +134,3 @@ private extension Dictionary where Key==Piece, Value==Position {
         }
     }
 }
-

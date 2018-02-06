@@ -18,6 +18,8 @@ enum Row: Int, EnumCollection {
 struct Position: Equatable {
     private(set) var row: Row
     private(set) var column: Column
+    
+    //var piece: Piece?
 
     init(_ row: Row, _ column: Column) {
         self.row = row
@@ -32,6 +34,10 @@ struct Position: Equatable {
     static func ==(lhs: Position, rhs: Position) -> Bool {
         return lhs.row == rhs.row && lhs.column == rhs.column
     }
+
+//    static func ===(lhs: Position, rhs: Position) -> Bool {
+//        return lhs == rhs && lhs.piece == rhs.piece
+//    }
 }
 
 //enum PositionEnum: String, EnumCollection {

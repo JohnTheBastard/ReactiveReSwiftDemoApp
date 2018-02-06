@@ -8,21 +8,7 @@ struct PuzzleState: StateType {
     var puzzle: Puzzle
 
     static var initialState: PuzzleState {
-        return self.init()
-    }
-
-    private init() {
-        let pieces: [Piece] = Piece.solution.shuffled
-        let positions: [Position] = Position.ordered
-        var puzzle = Puzzle()
-
-        assert(pieces.count == positions.count)
-
-        pieces.enumerated().forEach { (index, piece) in
-            puzzle[piece] = positions[index]
-        }
-
-        self.init(puzzle)
+        return PuzzleState(Puzzle.shuffled)
     }
 
     init(_ puzzle: Puzzle) {
