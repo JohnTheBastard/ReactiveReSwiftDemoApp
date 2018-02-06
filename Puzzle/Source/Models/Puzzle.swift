@@ -2,7 +2,7 @@
 //  Copyright © 2018 Bastardized Productions. All rights reserved.
 
 /**
-    All the logic for the puzzle lives here.
+    All logic for the puzzle lives here.
  */
 
 import Foundation
@@ -11,37 +11,23 @@ typealias Puzzle = [Piece:Position]
 
 //MARK: Public Puzzle Properties and Methods
 extension Dictionary where Key==Piece, Value==Position {
-    static var solution: Puzzle {
-        let pieces = Piece.ordered
-        let positions = Position.ordered
-        var puzzle = Puzzle()
+    static var solution = Puzzle(Piece.all, Position.all)
+
+    init(_ pieces: [Piece] = Piece.all.shuffled, _ positions: [Position] = Position.all) {
+        precondition(pieces.count == positions.count)
+
+        self.init()
 
         pieces.enumerated().forEach { (index, piece) in
-            puzzle[piece] = positions[index]
+            self[piece] = positions[index]
         }
-
-        return puzzle
     }
 
-    static var shuffled: Puzzle {
-        let pieces = Piece.ordered.shuffled
-        let positions = Position.ordered
-        var puzzle = Puzzle()
-
-        pieces.enumerated().forEach { (index, piece) in
-            puzzle[piece] = positions[index]
-        }
-
-        return puzzle
-    }
-
-    func findPiece(at position: Position) -> Piece? {
+    func findPiece(at position: Position) -> Piece {
         let pieces = self.findKeys(for: position)
 
-        //We should have exactly one piece per position
-        guard let piece = pieces.first, pieces.count == 1 else { return nil }
-
-        return piece
+        precondition(pieces.count == 1)
+        return pieces.first!
     }
 
     //TODO: Call this something else
@@ -62,22 +48,18 @@ private extension Dictionary where Key==Piece, Value==Position {
         let columns: [Column] = [.left, .center, .right]
         let pieces = columns.map { self.findPiece(at: Position(row, $0)) }
 
-        guard let a = pieces[0], let b = pieces[1], let c = pieces[2] else {
-            return nil
-        }
+        precondition(pieces.count == 3)
 
-        return Triple(a,b,c)
+        return Triple(pieces[0], pieces[1], pieces[2])
     }
 
     private func piecesIn(column: Column) -> Triple? {
         let rows: [Row] = [.upper, .middle, .lower]
         let pieces = rows.map { self.findPiece(at: Position($0, column)) }
 
-        guard let a = pieces[0], let b = pieces[1], let c = pieces[2] else {
-            return nil
-        }
+        precondition(pieces.count == 3)
 
-        return Triple(a,b,c)
+        return Triple(pieces[0], pieces[1], pieces[2])
     }
 
     private mutating func mutateRow(at position: Position) {

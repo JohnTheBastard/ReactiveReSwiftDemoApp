@@ -51,7 +51,6 @@
 		F2CD64562029136800F11911 /* PuzzleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64552029136800F11911 /* PuzzleAction.swift */; };
 		F2CD64582029169B00F11911 /* PuzzleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64572029169B00F11911 /* PuzzleReducer.swift */; };
 		F2CD645A20292A3E00F11911 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD645920292A3E00F11911 /* Puzzle.swift */; };
-		F2CD645C20295DE300F11911 /* AltPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD645B20295DE300F11911 /* AltPuzzle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +123,6 @@
 		F2CD64552029136800F11911 /* PuzzleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleAction.swift; sourceTree = "<group>"; };
 		F2CD64572029169B00F11911 /* PuzzleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleReducer.swift; sourceTree = "<group>"; };
 		F2CD645920292A3E00F11911 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
-		F2CD645B20295DE300F11911 /* AltPuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltPuzzle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +186,6 @@
 				52165BF420255CC9008100BE /* Piece.swift */,
 				F2CD64532028FF2A00F11911 /* Position.swift */,
 				F2CD645920292A3E00F11911 /* Puzzle.swift */,
-				F2CD645B20295DE300F11911 /* AltPuzzle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -518,7 +515,6 @@
 				52A0112C2025696F00248D83 /* UIStackView+Extensions.swift in Sources */,
 				F2CD64562029136800F11911 /* PuzzleAction.swift in Sources */,
 				52B69A8C20258830001A03B7 /* URL+Extensions.swift in Sources */,
-				F2CD645C20295DE300F11911 /* AltPuzzle.swift in Sources */,
 				F2CD64522028FBF000F11911 /* PuzzleState.swift in Sources */,
 				52A011412025839E00248D83 /* UIView+Closures.swift in Sources */,
 				52165BF720255D74008100BE /* EnumCollection.swift in Sources */,

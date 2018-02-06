@@ -7,12 +7,6 @@ enum Piece {
     case gap
     case number(Int)
     case complete
-
-    static var ordered: [Piece] {
-        return [ .number(1), .number(2), .number(3),
-                 .number(4), .number(5), .number(6),
-                 .number(7), .number(8), .gap ]
-    }
 }
 
 extension Piece: Hashable {
@@ -33,5 +27,11 @@ extension Piece: Hashable {
         case .number(let value): return value
         case .complete:          return 9
         }
+    }
+
+    static var all: [Piece] {
+        return [ .number(1), .number(2), .number(3),
+                 .number(4), .number(5), .number(6),
+                 .number(7), .number(8), .gap ]
     }
 }

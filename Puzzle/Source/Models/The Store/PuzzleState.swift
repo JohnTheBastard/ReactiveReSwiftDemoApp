@@ -8,7 +8,7 @@ struct PuzzleState: StateType {
     var puzzle: Puzzle
 
     static var initialState: PuzzleState {
-        return PuzzleState(Puzzle.shuffled)
+        return PuzzleState(Puzzle())
     }
 
     init(_ puzzle: Puzzle) {
