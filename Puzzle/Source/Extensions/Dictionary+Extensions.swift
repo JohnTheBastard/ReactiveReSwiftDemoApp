@@ -33,3 +33,18 @@ extension Dictionary {
         rhs.forEach { lhs[$0] = $1}
     }
 }
+
+extension Dictionary where Value: Equatable {
+    func findKeys(for value: Value) -> [Key] {
+        let keys = self.filter({ $0.value == value }).keys
+
+        return Array(keys)
+    }
+
+    func findKey(for value: Value) -> Key? {
+        let keys = self.filter({ $0.value == value }).keys
+
+        return keys.first
+    }
+
+}

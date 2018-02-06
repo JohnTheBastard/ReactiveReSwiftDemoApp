@@ -46,6 +46,13 @@
 		F297E5A92022B6920051110D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F297E5A72022B6920051110D /* LaunchScreen.storyboard */; };
 		F297E5B42022B6920051110D /* PuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E5B32022B6920051110D /* PuzzleTests.swift */; };
 		F297E5BF2022B6920051110D /* PuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E5BE2022B6920051110D /* PuzzleUITests.swift */; };
+		F2CD64522028FBF000F11911 /* PuzzleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64512028FBF000F11911 /* PuzzleState.swift */; };
+		F2CD64542028FF2A00F11911 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64532028FF2A00F11911 /* Position.swift */; };
+		F2CD64562029136800F11911 /* PuzzleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64552029136800F11911 /* PuzzleAction.swift */; };
+		F2CD64582029169B00F11911 /* PuzzleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64572029169B00F11911 /* PuzzleReducer.swift */; };
+		F2CD645A20292A3E00F11911 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD645920292A3E00F11911 /* Puzzle.swift */; };
+		F2CD645E20297B0D00F11911 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD645D20297B0D00F11911 /* Row.swift */; };
+		F2CD646120297B8600F11911 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD646020297B8600F11911 /* Column.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +120,13 @@
 		F297E5BA2022B6920051110D /* PuzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F297E5BE2022B6920051110D /* PuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleUITests.swift; sourceTree = "<group>"; };
 		F297E5C02022B6920051110D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CD64512028FBF000F11911 /* PuzzleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleState.swift; sourceTree = "<group>"; };
+		F2CD64532028FF2A00F11911 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		F2CD64552029136800F11911 /* PuzzleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleAction.swift; sourceTree = "<group>"; };
+		F2CD64572029169B00F11911 /* PuzzleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleReducer.swift; sourceTree = "<group>"; };
+		F2CD645920292A3E00F11911 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		F2CD645D20297B0D00F11911 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		F2CD646020297B8600F11911 /* Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,11 +161,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52165BEF20255A37008100BE /* Store */ = {
+		52165BEF20255A37008100BE /* The Store */ = {
 			isa = PBXGroup;
 			children = (
+				F2CD64512028FBF000F11911 /* PuzzleState.swift */,
+				F2CD64552029136800F11911 /* PuzzleAction.swift */,
+				F2CD64572029169B00F11911 /* PuzzleReducer.swift */,
 			);
-			path = Store;
+			path = "The Store";
 			sourceTree = "<group>";
 		};
 		52165BF020255A4D008100BE /* Protocols */ = {
@@ -167,9 +184,10 @@
 		52165BF320255CA5008100BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F2CD645F20297B5200F11911 /* Puzzle */,
+				52165BEF20255A37008100BE /* The Store */,
 				52A0112F20256A5E00248D83 /* Attributed.swift */,
 				52A011232025622E00248D83 /* Colors.swift */,
-				52165BF420255CC9008100BE /* Piece.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,7 +260,6 @@
 		F297E59D2022B6920051110D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				52165BEF20255A37008100BE /* Store */,
 				52165BF320255CA5008100BE /* Models */,
 				52165BF820255E64008100BE /* Extensions */,
 				52165BF020255A4D008100BE /* Protocols */,
@@ -286,6 +303,18 @@
 				52165BE220255543008100BE /* SwiftyUserDefaults.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2CD645F20297B5200F11911 /* Puzzle */ = {
+			isa = PBXGroup;
+			children = (
+				F2CD646020297B8600F11911 /* Column.swift */,
+				F2CD645D20297B0D00F11911 /* Row.swift */,
+				F2CD64532028FF2A00F11911 /* Position.swift */,
+				52165BF420255CC9008100BE /* Piece.swift */,
+				F2CD645920292A3E00F11911 /* Puzzle.swift */,
+			);
+			path = Puzzle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,14 +509,18 @@
 				52A0113020256A5E00248D83 /* Attributed.swift in Sources */,
 				52A011282025645B00248D83 /* UIEdgeInsets+Extensions.swift in Sources */,
 				52A0113820257C1000248D83 /* UILabel+Extensions.swift in Sources */,
+				F2CD64542028FF2A00F11911 /* Position.swift in Sources */,
 				52A011422025839E00248D83 /* UIGestureRecognizer+Closures.swift in Sources */,
 				52A01134202579EE00248D83 /* UIViewController+Extensions.swift in Sources */,
 				52A011432025839E00248D83 /* UIControl+Closures.swift in Sources */,
 				52A0113620257A7300248D83 /* UIImage+Extensions.swift in Sources */,
 				52165BFA20255E83008100BE /* Array+Extensions.swift in Sources */,
 				52165C022025608D008100BE /* SignalProducer+Extensions.swift in Sources */,
+				F2CD64582029169B00F11911 /* PuzzleReducer.swift in Sources */,
+				F2CD646120297B8600F11911 /* Column.swift in Sources */,
 				52A011262025637000248D83 /* UIDevice+Extensions.swift in Sources */,
 				52165BF520255CC9008100BE /* Piece.swift in Sources */,
+				F2CD645A20292A3E00F11911 /* Puzzle.swift in Sources */,
 				52165BFE20255FC7008100BE /* SignalObserver+Extensions.swift in Sources */,
 				52A0113A20257E9C00248D83 /* UIBarButtonItem+Closures.swift in Sources */,
 				52165BFC20255F44008100BE /* Dictionary+Extensions.swift in Sources */,
@@ -495,7 +528,10 @@
 				52A0113C2025820200248D83 /* ClosureHandler.swift in Sources */,
 				52165BF220255A66008100BE /* Then.swift in Sources */,
 				52A0112C2025696F00248D83 /* UIStackView+Extensions.swift in Sources */,
+				F2CD64562029136800F11911 /* PuzzleAction.swift in Sources */,
 				52B69A8C20258830001A03B7 /* URL+Extensions.swift in Sources */,
+				F2CD64522028FBF000F11911 /* PuzzleState.swift in Sources */,
+				F2CD645E20297B0D00F11911 /* Row.swift in Sources */,
 				52A011412025839E00248D83 /* UIView+Closures.swift in Sources */,
 				52165BF720255D74008100BE /* EnumCollection.swift in Sources */,
 				F297E59F2022B6920051110D /* AppDelegate.swift in Sources */,
@@ -666,7 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CQGNZ88J6Z;
+				DEVELOPMENT_TEAM = KUNVAN4RR6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -687,7 +723,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CQGNZ88J6Z;
+				DEVELOPMENT_TEAM = KUNVAN4RR6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
