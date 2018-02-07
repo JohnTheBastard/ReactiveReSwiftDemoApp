@@ -40,10 +40,8 @@
 		52A011432025839E00248D83 /* UIControl+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A011402025839E00248D83 /* UIControl+Closures.swift */; };
 		52B69A8C20258830001A03B7 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B69A8B20258830001A03B7 /* URL+Extensions.swift */; };
 		F297E59F2022B6920051110D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E59E2022B6920051110D /* AppDelegate.swift */; };
-		F297E5A12022B6920051110D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E5A02022B6920051110D /* ViewController.swift */; };
-		F297E5A42022B6920051110D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F297E5A22022B6920051110D /* Main.storyboard */; };
+		F297E5A12022B6920051110D /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E5A02022B6920051110D /* PuzzleViewController.swift */; };
 		F297E5A62022B6920051110D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F297E5A52022B6920051110D /* Assets.xcassets */; };
-		F297E5A92022B6920051110D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F297E5A72022B6920051110D /* LaunchScreen.storyboard */; };
 		F297E5B42022B6920051110D /* PuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E5B32022B6920051110D /* PuzzleTests.swift */; };
 		F297E5BF2022B6920051110D /* PuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E5BE2022B6920051110D /* PuzzleUITests.swift */; };
 		F2CD64522028FBF000F11911 /* PuzzleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64512028FBF000F11911 /* PuzzleState.swift */; };
@@ -109,10 +107,8 @@
 		52B69A8B20258830001A03B7 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		F297E59B2022B6920051110D /* Puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Puzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F297E59E2022B6920051110D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F297E5A02022B6920051110D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F297E5A32022B6920051110D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F297E5A02022B6920051110D /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
 		F297E5A52022B6920051110D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F297E5A82022B6920051110D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F297E5AA2022B6920051110D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F297E5AF2022B6920051110D /* PuzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F297E5B32022B6920051110D /* PuzzleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTests.swift; sourceTree = "<group>"; };
@@ -233,6 +229,14 @@
 			path = GestureRecognizerClosures;
 			sourceTree = "<group>";
 		};
+		F25129D1202AC7B0002A9FFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F297E5A02022B6920051110D /* PuzzleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F297E5922022B6920051110D = {
 			isa = PBXGroup;
 			children = (
@@ -260,15 +264,13 @@
 		F297E59D2022B6920051110D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F25129D1202AC7B0002A9FFF /* Controllers */,
 				52165BF320255CA5008100BE /* Models */,
 				52165BF820255E64008100BE /* Extensions */,
 				52165BF020255A4D008100BE /* Protocols */,
 				52A0113D2025828900248D83 /* Utilities */,
 				F297E59E2022B6920051110D /* AppDelegate.swift */,
-				F297E5A02022B6920051110D /* ViewController.swift */,
-				F297E5A22022B6920051110D /* Main.storyboard */,
 				F297E5A52022B6920051110D /* Assets.xcassets */,
-				F297E5A72022B6920051110D /* LaunchScreen.storyboard */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -426,9 +428,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F297E5A92022B6920051110D /* LaunchScreen.storyboard in Resources */,
 				F297E5A62022B6920051110D /* Assets.xcassets in Resources */,
-				F297E5A42022B6920051110D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +505,7 @@
 				52165C0020256010008100BE /* NSObject+Extensions.swift in Sources */,
 				52A011242025622E00248D83 /* Colors.swift in Sources */,
 				52A0112A2025653900248D83 /* Displayable.swift in Sources */,
-				F297E5A12022B6920051110D /* ViewController.swift in Sources */,
+				F297E5A12022B6920051110D /* PuzzleViewController.swift in Sources */,
 				52A0113020256A5E00248D83 /* Attributed.swift in Sources */,
 				52A011282025645B00248D83 /* UIEdgeInsets+Extensions.swift in Sources */,
 				52A0113820257C1000248D83 /* UILabel+Extensions.swift in Sources */,
@@ -569,25 +569,6 @@
 			targetProxy = F297E5BB2022B6920051110D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F297E5A22022B6920051110D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F297E5A32022B6920051110D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F297E5A72022B6920051110D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F297E5A82022B6920051110D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F297E5C12022B6920051110D /* Debug */ = {
