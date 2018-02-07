@@ -40,6 +40,8 @@
 		52B69A8C20258830001A03B7 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B69A8B20258830001A03B7 /* URL+Extensions.swift */; };
 		F25129D5202B8B67002A9FFF /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25129D4202B8B67002A9FFF /* Puzzle.swift */; };
 		F25129D7202B9152002A9FFF /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25129D6202B9152002A9FFF /* Piece.swift */; };
+		F25129D9202B9B41002A9FFF /* ReactiveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25129D8202B9B41002A9FFF /* ReactiveStore.swift */; };
+		F25129DB202BBA65002A9FFF /* ReactiveSwift+ReactiveReSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25129DA202BBA65002A9FFF /* ReactiveSwift+ReactiveReSwift.swift */; };
 		F297E59F2022B6920051110D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E59E2022B6920051110D /* AppDelegate.swift */; };
 		F297E5A12022B6920051110D /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E5A02022B6920051110D /* PuzzleViewController.swift */; };
 		F297E5A62022B6920051110D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F297E5A52022B6920051110D /* Assets.xcassets */; };
@@ -106,6 +108,8 @@
 		52B69A8B20258830001A03B7 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		F25129D4202B8B67002A9FFF /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		F25129D6202B9152002A9FFF /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		F25129D8202B9B41002A9FFF /* ReactiveStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveStore.swift; sourceTree = "<group>"; };
+		F25129DA202BBA65002A9FFF /* ReactiveSwift+ReactiveReSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactiveSwift+ReactiveReSwift.swift"; sourceTree = "<group>"; };
 		F297E59B2022B6920051110D /* Puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Puzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F297E59E2022B6920051110D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F297E5A02022B6920051110D /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				F2CD64512028FBF000F11911 /* PuzzleState.swift */,
 				F2CD64552029136800F11911 /* PuzzleAction.swift */,
 				F2CD64572029169B00F11911 /* PuzzleReducer.swift */,
+				F25129D8202B9B41002A9FFF /* ReactiveStore.swift */,
 			);
 			path = "The Store";
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				F297E59E2022B6920051110D /* AppDelegate.swift */,
+				F25129DA202BBA65002A9FFF /* ReactiveSwift+ReactiveReSwift.swift */,
 				F297E5A52022B6920051110D /* Assets.xcassets */,
 			);
 			path = App;
@@ -527,6 +533,7 @@
 				52A011282025645B00248D83 /* UIEdgeInsets+Extensions.swift in Sources */,
 				52A0113820257C1000248D83 /* UILabel+Extensions.swift in Sources */,
 				F2CD64542028FF2A00F11911 /* Position.swift in Sources */,
+				F25129D9202B9B41002A9FFF /* ReactiveStore.swift in Sources */,
 				52A011422025839E00248D83 /* UIGestureRecognizer+Closures.swift in Sources */,
 				52A01134202579EE00248D83 /* UIViewController+Extensions.swift in Sources */,
 				52A011432025839E00248D83 /* UIControl+Closures.swift in Sources */,
@@ -545,6 +552,7 @@
 				52165BF220255A66008100BE /* Then.swift in Sources */,
 				52A0112C2025696F00248D83 /* UIStackView+Extensions.swift in Sources */,
 				F2CD64562029136800F11911 /* PuzzleAction.swift in Sources */,
+				F25129DB202BBA65002A9FFF /* ReactiveSwift+ReactiveReSwift.swift in Sources */,
 				52B69A8C20258830001A03B7 /* URL+Extensions.swift in Sources */,
 				F2CD64522028FBF000F11911 /* PuzzleState.swift in Sources */,
 				F2CD645E20297B0D00F11911 /* Row.swift in Sources */,

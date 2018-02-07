@@ -10,7 +10,6 @@ import Foundation
 typealias Puzzle = Dictionary<Position,Piece>
 
 //MARK: Public Puzzle Properties and Methods
-
 extension Dictionary where Key==Position, Value==Piece {
     static var solution = Puzzle(Position.all, Piece.all)
 
@@ -32,7 +31,7 @@ extension Dictionary where Key==Position, Value==Piece {
     }
 
     mutating func interact(at position: Position) {
-        let gapPosition = self.findPosition(of: .gap)
+        let gapPosition = self.findPosition(of: .gap(false))
         guard position != gapPosition else { return }
 
         if position.column == gapPosition.column {
@@ -121,18 +120,17 @@ private extension Dictionary where Key==Position, Value==Piece {
 
         func move(at index: Int) -> Triple {
             switch (a, b, c, index) {
-            case (.number(_), .number(_), .gap, 0): return self.rollRight
-            case (.number(_), .number(_), .gap, 1): return self.swapRight
+            case (.number(_), .number(_), .gap(_), 0): return self.rollRight
+            case (.number(_), .number(_), .gap(_), 1): return self.swapRight
 
-            case (.number(_), .gap, .number(_), 0): return self.swapLeft
-            case (.number(_), .gap, .number(_), 2): return self.swapRight
+            case (.number(_), .gap(_), .number(_), 0): return self.swapLeft
+            case (.number(_), .gap(_), .number(_), 2): return self.swapRight
 
-            case (.gap, .number(_), .number(_), 1): return self.swapLeft
-            case (.gap, .number(_), .number(_), 2): return self.rollLeft
+            case (.gap(_), .number(_), .number(_), 1): return self.swapLeft
+            case (.gap(_), .number(_), .number(_), 2): return self.rollLeft
 
             default:                                return self
             }
         }
     }
 }
-

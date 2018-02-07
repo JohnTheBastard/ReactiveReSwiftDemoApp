@@ -4,14 +4,13 @@
 import Foundation
 
 enum Piece: Hashable {
-    case gap
+    case gap(Bool)
     case number(Int)
-    case complete
 
     static var all: [Piece] {
         return [ .number(1), .number(2), .number(3),
                  .number(4), .number(5), .number(6),
-                 .number(7), .number(8), .gap ]
+                 .number(7), .number(8), .gap(false) ]
     }
 
     static var randomized: [Piece] {
@@ -29,7 +28,7 @@ enum Piece: Hashable {
     //MARK: Hashable conformance
     static func ==(lhs: Piece, rhs: Piece) -> Bool {
         switch (lhs, rhs) {
-        case (.gap, .gap), (.complete, .complete):
+        case (.gap(_), .gap(_)):
             return true
         case (.number(let a), .number(let b)):
             return a == b
@@ -40,9 +39,9 @@ enum Piece: Hashable {
 
     var hashValue: Int {
         switch self {
-        case .gap:               return 0
+        case .gap(let complete):
+            return complete == true ? 9 : 0
         case .number(let value): return value
-        case .complete:          return 9
         }
     }
 }
