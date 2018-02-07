@@ -2,39 +2,38 @@
 //  Copyright © 2018 Bastardized Productions. All rights reserved.
 
 /**
-    All logic for the puzzle lives here.
+ All logic for the puzzle lives here.
  */
 
 import Foundation
 
-typealias Puzzle = Dictionary<Piece,Position>
+typealias Puzzle = Dictionary<Position,Piece>
 
 //MARK: Public Puzzle Properties and Methods
 
-extension Dictionary where Key==Piece, Value==Position {
-    static var solution = Puzzle(Piece.all, Position.all)
+extension Dictionary where Key==Position, Value==Piece {
+    static var solution = Puzzle(Position.all, Piece.all)
 
-    init(_ pieces: [Piece] = Piece.all.shuffled, _ positions: [Position] = Position.all) {
-        precondition(pieces.count == positions.count)
+    init(_ positions: [Position] = Position.all, _ pieces: [Piece] = Piece.all.shuffled) {
+        precondition(positions.count == pieces.count)
 
         self.init()
 
-        pieces.enumerated().forEach { (index, piece) in
-            self[piece] = positions[index]
+        positions.enumerated().forEach { (index, position) in
+            self[position] = pieces[index]
         }
     }
 
+    func findPosition(of piece: Piece) -> Position {
+        let positions = self.findKeys(for: piece)
 
-
-    func findPiece(at position: Position) -> Piece {
-        let pieces = self.findKeys(for: position)
-
-        precondition(pieces.count == 1)
-        return pieces.first!
+        precondition(positions.count == 1)
+        return positions.first!
     }
 
     mutating func interact(at position: Position) {
-        guard let gapPosition = self[.gap], position != gapPosition else { return }
+        let gapPosition = self.findPosition(of: .gap)
+        guard position != gapPosition else { return }
 
         if position.column == gapPosition.column {
             self.mutateRow(at: position)
@@ -53,23 +52,20 @@ extension Dictionary where Key==Piece, Value==Position {
 }
 
 //MARK: Private Puzzle Helper Methods
-private extension Dictionary where Key==Piece, Value==Position {
+private extension Dictionary where Key==Position, Value==Piece {
     private var asArrayOfInts: [Int] {
-        var _asArrayOfInts = [Int]()
-
-        Position.all.forEach {
-            switch self.findKey(for: $0) {
-            case .some(.number(let value)): _asArrayOfInts.append(value)
-            default: break
+        return
+            Position.all.flatMap {
+                switch self[$0] {
+                case .some(.number(let value)): return value
+                default:                        return nil
+                }
             }
-        }
-
-        return _asArrayOfInts
     }
 
     private func piecesIn(row: Row) -> Triple? {
         let columns: [Column] = [.left, .center, .right]
-        let pieces = columns.map { self.findPiece(at: Position(row, $0)) }
+        let pieces = columns.flatMap { self[Position(row, $0)] }
 
         precondition(pieces.count == 3)
 
@@ -78,7 +74,7 @@ private extension Dictionary where Key==Piece, Value==Position {
 
     private func piecesIn(column: Column) -> Triple? {
         let rows: [Row] = [.upper, .middle, .lower]
-        let pieces = rows.map { self.findPiece(at: Position($0, column)) }
+        let pieces = rows.flatMap { self[Position($0, column)] }
 
         precondition(pieces.count == 3)
 
@@ -91,9 +87,9 @@ private extension Dictionary where Key==Piece, Value==Position {
         let index = position.column.rawValue
         let (left, center, right) = pieces.move(at: index).asTuple
 
-        self[left]   = Position(position.row, .left)
-        self[center] = Position(position.row, .center)
-        self[right]  = Position(position.row, .right)
+        self[Position(position.row, .left)]   = left
+        self[Position(position.row, .center)] = center
+        self[Position(position.row, .right)]  = right
     }
 
     private mutating func mutateColumn(at position: Position) {
@@ -102,9 +98,9 @@ private extension Dictionary where Key==Piece, Value==Position {
         let index = position.row.rawValue
         let (upper, middle, lower) = pieces.move(at: index).asTuple
 
-        self[upper] = Position(.upper, position.column)
-        self[middle] = Position(.middle, position.column)
-        self[lower] = Position(.lower, position.column)
+        self[Position(.upper, position.column)] = upper
+        self[Position(.middle, position.column)] = middle
+        self[Position(.lower, position.column)] =  lower
     }
 
     private struct Triple {
@@ -139,3 +135,4 @@ private extension Dictionary where Key==Piece, Value==Position {
         }
     }
 }
+
