@@ -237,6 +237,25 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		F25129D2202AC974002A9FFF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F297E59E2022B6920051110D /* AppDelegate.swift */,
+				F297E5A52022B6920051110D /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F25129D3202AC98C002A9FFF /* Conveniences */ = {
+			isa = PBXGroup;
+			children = (
+				52165BF820255E64008100BE /* Extensions */,
+				52165BF020255A4D008100BE /* Protocols */,
+				52A0113D2025828900248D83 /* Utilities */,
+			);
+			path = Conveniences;
+			sourceTree = "<group>";
+		};
 		F297E5922022B6920051110D = {
 			isa = PBXGroup;
 			children = (
@@ -264,13 +283,10 @@
 		F297E59D2022B6920051110D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F25129D2202AC974002A9FFF /* App */,
 				F25129D1202AC7B0002A9FFF /* Controllers */,
 				52165BF320255CA5008100BE /* Models */,
-				52165BF820255E64008100BE /* Extensions */,
-				52165BF020255A4D008100BE /* Protocols */,
-				52A0113D2025828900248D83 /* Utilities */,
-				F297E59E2022B6920051110D /* AppDelegate.swift */,
-				F297E5A52022B6920051110D /* Assets.xcassets */,
+				F25129D3202AC98C002A9FFF /* Conveniences */,
 			);
 			path = Source;
 			sourceTree = "<group>";
