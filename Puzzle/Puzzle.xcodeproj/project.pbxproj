@@ -15,7 +15,6 @@
 		52165BED20255543008100BE /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52165BE520255543008100BE /* ReSwift.framework */; };
 		52165BEE20255543008100BE /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52165BE620255543008100BE /* ReactiveReSwift.framework */; };
 		52165BF220255A66008100BE /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BF120255A66008100BE /* Then.swift */; };
-		52165BF520255CC9008100BE /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BF420255CC9008100BE /* Piece.swift */; };
 		52165BF720255D74008100BE /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BF620255D74008100BE /* EnumCollection.swift */; };
 		52165BFA20255E83008100BE /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BF920255E83008100BE /* Array+Extensions.swift */; };
 		52165BFC20255F44008100BE /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BFB20255F44008100BE /* Dictionary+Extensions.swift */; };
@@ -39,6 +38,8 @@
 		52A011422025839E00248D83 /* UIGestureRecognizer+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0113F2025839E00248D83 /* UIGestureRecognizer+Closures.swift */; };
 		52A011432025839E00248D83 /* UIControl+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A011402025839E00248D83 /* UIControl+Closures.swift */; };
 		52B69A8C20258830001A03B7 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B69A8B20258830001A03B7 /* URL+Extensions.swift */; };
+		F25129D5202B8B67002A9FFF /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25129D4202B8B67002A9FFF /* Puzzle.swift */; };
+		F25129D7202B9152002A9FFF /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25129D6202B9152002A9FFF /* Piece.swift */; };
 		F297E59F2022B6920051110D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E59E2022B6920051110D /* AppDelegate.swift */; };
 		F297E5A12022B6920051110D /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297E5A02022B6920051110D /* PuzzleViewController.swift */; };
 		F297E5A62022B6920051110D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F297E5A52022B6920051110D /* Assets.xcassets */; };
@@ -48,7 +49,6 @@
 		F2CD64542028FF2A00F11911 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64532028FF2A00F11911 /* Position.swift */; };
 		F2CD64562029136800F11911 /* PuzzleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64552029136800F11911 /* PuzzleAction.swift */; };
 		F2CD64582029169B00F11911 /* PuzzleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD64572029169B00F11911 /* PuzzleReducer.swift */; };
-		F2CD645A20292A3E00F11911 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD645920292A3E00F11911 /* Puzzle.swift */; };
 		F2CD645E20297B0D00F11911 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD645D20297B0D00F11911 /* Row.swift */; };
 		F2CD646120297B8600F11911 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD646020297B8600F11911 /* Column.swift */; };
 /* End PBXBuildFile section */
@@ -81,7 +81,6 @@
 		52165BE520255543008100BE /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
 		52165BE620255543008100BE /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveReSwift.framework; path = Carthage/Build/iOS/ReactiveReSwift.framework; sourceTree = "<group>"; };
 		52165BF120255A66008100BE /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
-		52165BF420255CC9008100BE /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		52165BF620255D74008100BE /* EnumCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		52165BF920255E83008100BE /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		52165BFB20255F44008100BE /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
@@ -105,6 +104,8 @@
 		52A0113F2025839E00248D83 /* UIGestureRecognizer+Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Closures.swift"; sourceTree = "<group>"; };
 		52A011402025839E00248D83 /* UIControl+Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Closures.swift"; sourceTree = "<group>"; };
 		52B69A8B20258830001A03B7 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		F25129D4202B8B67002A9FFF /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		F25129D6202B9152002A9FFF /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		F297E59B2022B6920051110D /* Puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Puzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F297E59E2022B6920051110D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F297E5A02022B6920051110D /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		F2CD64532028FF2A00F11911 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		F2CD64552029136800F11911 /* PuzzleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleAction.swift; sourceTree = "<group>"; };
 		F2CD64572029169B00F11911 /* PuzzleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleReducer.swift; sourceTree = "<group>"; };
-		F2CD645920292A3E00F11911 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		F2CD645D20297B0D00F11911 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		F2CD646020297B8600F11911 /* Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,8 +329,8 @@
 				F2CD646020297B8600F11911 /* Column.swift */,
 				F2CD645D20297B0D00F11911 /* Row.swift */,
 				F2CD64532028FF2A00F11911 /* Position.swift */,
-				52165BF420255CC9008100BE /* Piece.swift */,
-				F2CD645920292A3E00F11911 /* Puzzle.swift */,
+				F25129D6202B9152002A9FFF /* Piece.swift */,
+				F25129D4202B8B67002A9FFF /* Puzzle.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -523,6 +523,7 @@
 				52A0112A2025653900248D83 /* Displayable.swift in Sources */,
 				F297E5A12022B6920051110D /* PuzzleViewController.swift in Sources */,
 				52A0113020256A5E00248D83 /* Attributed.swift in Sources */,
+				F25129D5202B8B67002A9FFF /* Puzzle.swift in Sources */,
 				52A011282025645B00248D83 /* UIEdgeInsets+Extensions.swift in Sources */,
 				52A0113820257C1000248D83 /* UILabel+Extensions.swift in Sources */,
 				F2CD64542028FF2A00F11911 /* Position.swift in Sources */,
@@ -535,11 +536,10 @@
 				F2CD64582029169B00F11911 /* PuzzleReducer.swift in Sources */,
 				F2CD646120297B8600F11911 /* Column.swift in Sources */,
 				52A011262025637000248D83 /* UIDevice+Extensions.swift in Sources */,
-				52165BF520255CC9008100BE /* Piece.swift in Sources */,
-				F2CD645A20292A3E00F11911 /* Puzzle.swift in Sources */,
 				52165BFE20255FC7008100BE /* SignalObserver+Extensions.swift in Sources */,
 				52A0113A20257E9C00248D83 /* UIBarButtonItem+Closures.swift in Sources */,
 				52165BFC20255F44008100BE /* Dictionary+Extensions.swift in Sources */,
+				F25129D7202B9152002A9FFF /* Piece.swift in Sources */,
 				52A0113220256F9F00248D83 /* UIView+Extensions.swift in Sources */,
 				52A0113C2025820200248D83 /* ClosureHandler.swift in Sources */,
 				52165BF220255A66008100BE /* Then.swift in Sources */,

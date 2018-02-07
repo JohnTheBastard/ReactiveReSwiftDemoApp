@@ -15,7 +15,7 @@ enum Colors: EnumCollection {
     var uiColor: UIColor {
         switch self {
         case .blue:
-            return #colorLiteral(red: 0, green: 0.4509803922, blue: 0.7294117647, alpha: 1)
+            return #colorLiteral(red: 0, green: 0.5, blue: 0.75, alpha: 1)
         case .red:
             return #colorLiteral(red: 1, green: 0.1882352941, blue: 0.1137254902, alpha: 1)
         case .yellow:
