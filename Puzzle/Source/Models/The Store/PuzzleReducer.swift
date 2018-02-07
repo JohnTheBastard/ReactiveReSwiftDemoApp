@@ -12,14 +12,15 @@ fileprivate func tapReducer(tap position: Position, state: PuzzleState) -> Puzzl
     return mutableState
 }
 
-func puzzleReducer(action: PuzzleAction, state: PuzzleState?) -> PuzzleState {
+func puzzleReducer(action: Action, state: PuzzleState?) -> PuzzleState {
     var state = state ?? PuzzleState.initialState
 
-    switch action {
-    case .tapped(let position):
+    switch action as? PuzzleAction {
+    case .some(.tapped(let position)):
         state.puzzle = tapReducer(tap: position, state: state).puzzle
-    case .reset:
+    case .some(.reset):
         state.puzzle = PuzzleState.initialState.puzzle
+    case .none: break
     }
 
     return state

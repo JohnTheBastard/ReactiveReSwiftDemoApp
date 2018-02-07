@@ -7,9 +7,10 @@
 
 import Foundation
 
-typealias Puzzle = [Piece:Position]
+typealias Puzzle = Dictionary<Piece,Position>
 
 //MARK: Public Puzzle Properties and Methods
+
 extension Dictionary where Key==Piece, Value==Position {
     static var solution = Puzzle(Piece.all, Position.all)
 
@@ -22,6 +23,8 @@ extension Dictionary where Key==Piece, Value==Position {
             self[piece] = positions[index]
         }
     }
+
+
 
     func findPiece(at position: Position) -> Piece {
         let pieces = self.findKeys(for: position)
@@ -51,6 +54,19 @@ extension Dictionary where Key==Piece, Value==Position {
 
 //MARK: Private Puzzle Helper Methods
 private extension Dictionary where Key==Piece, Value==Position {
+    private var asArrayOfInts: [Int] {
+        var _asArrayOfInts = [Int]()
+
+        Position.all.forEach {
+            switch self.findKey(for: $0) {
+            case .some(.number(let value)): _asArrayOfInts.append(value)
+            default: break
+            }
+        }
+
+        return _asArrayOfInts
+    }
+
     private func piecesIn(row: Row) -> Triple? {
         let columns: [Column] = [.left, .center, .right]
         let pieces = columns.map { self.findPiece(at: Position(row, $0)) }
