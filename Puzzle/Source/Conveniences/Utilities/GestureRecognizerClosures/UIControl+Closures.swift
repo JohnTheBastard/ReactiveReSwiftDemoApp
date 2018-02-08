@@ -1,4 +1,6 @@
-// From https://github.com/marcbaldwin/GestureRecognizerClosures
+/**
+    From: https://github.com/marcbaldwin/GestureRecognizerClosures
+ */
 
 import UIKit
 

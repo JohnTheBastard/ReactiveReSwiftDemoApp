@@ -12,10 +12,19 @@ struct Position: Hashable {
         self.column = column
     }
 
-    static var all: [Position] =
-        [ Position(.upper,  .left), Position(.upper,  .center), Position(.upper,  .right),
-          Position(.middle, .left), Position(.middle, .center), Position(.middle, .right),
-          Position(.lower,  .left), Position(.lower,  .center), Position(.lower,  .right) ]
+    static let upperLeft    = Position(.upper,  .left)
+    static let upperCenter  = Position(.upper,  .center)
+    static let upperRight   = Position(.upper,  .right)
+    static let middleLeft   = Position(.middle, .left)
+    static let middleCenter = Position(.middle, .center)
+    static let middleRight  = Position(.middle, .right)
+    static let lowerLeft    = Position(.lower,  .left)
+    static let lowerCenter  = Position(.lower,  .center)
+    static let lowerRight   = Position(.lower,  .right)
+
+    static var all: [Position] = [ upperLeft,  upperCenter,  upperRight,
+                                   middleLeft, middleCenter, middleRight,
+                                   lowerLeft,  lowerCenter,  lowerRight ]
 
     //MARK: Hashable conformance
     static func ==(lhs: Position, rhs: Position) -> Bool {

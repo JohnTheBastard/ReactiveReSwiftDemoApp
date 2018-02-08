@@ -4,24 +4,14 @@
 import Foundation
 import ReSwift
 
-fileprivate func tapReducer(tap position: Position, state: PuzzleState) -> PuzzleState {
-    var mutableState = state
+let puzzleReducer: Reducer<PuzzleState> = { action, state in
+    var newState = state ?? PuzzleState.initialState
+    guard let action = action as? PuzzleAction else { return newState }
 
-    mutableState.puzzle.interact(at: position)
-
-    return mutableState
-}
-
-func puzzleReducer(action: Action, state: PuzzleState?) -> PuzzleState {
-    var state = state ?? PuzzleState.initialState
-
-    switch action as? PuzzleAction {
-    case .some(.tapped(let position)):
-        state.puzzle = tapReducer(tap: position, state: state).puzzle
-    case .some(.reset):
-        state.puzzle = PuzzleState.initialState.puzzle
-    case .none: break
+    switch action {
+    case .tapped(let position): newState.puzzle.interact(at: position)
+    case .reset:                newState.puzzle = PuzzleState.initialState.puzzle
     }
 
-    return state
+    return newState
 }

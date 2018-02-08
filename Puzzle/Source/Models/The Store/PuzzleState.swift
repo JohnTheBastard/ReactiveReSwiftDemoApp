@@ -15,8 +15,3 @@ struct PuzzleState: StateType {
         self.puzzle = puzzle
     }
 }
-
-let theStore = Store(
-    reducer: puzzleReducer,
-    state: PuzzleState.initialState,
-    middleware: [])
