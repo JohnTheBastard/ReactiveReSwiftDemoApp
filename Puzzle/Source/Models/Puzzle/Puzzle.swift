@@ -13,7 +13,7 @@ typealias Puzzle = Dictionary<Position,Piece>
 extension Dictionary where Key==Position, Value==Piece {
     static var solution = Puzzle(Position.all, Piece.all)
 
-    init(_ positions: [Position] = Position.all, _ pieces: [Piece] = Piece.all.shuffled) {
+    init(_ positions: [Position] = Position.all, _ pieces: [Piece] = Piece.newGame) {
         precondition(positions.count == pieces.count)
 
         self.init()

@@ -3,8 +3,6 @@
 
 import UIKit
 
-let reactiveStore = ReactiveStore()
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

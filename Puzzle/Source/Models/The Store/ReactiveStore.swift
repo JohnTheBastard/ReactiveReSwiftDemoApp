@@ -6,6 +6,8 @@ import ReSwift
 import ReactiveSwift
 //import ReactiveReSwift
 
+let reactiveStore = ReactiveStore()
+
 class ReactiveStore: StoreSubscriber {
     let upperLeft    = MutableProperty<Piece>(.number(1))
     let upperCenter  = MutableProperty<Piece>(.number(2))

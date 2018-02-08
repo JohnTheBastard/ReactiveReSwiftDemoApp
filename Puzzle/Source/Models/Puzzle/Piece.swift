@@ -13,7 +13,7 @@ enum Piece: Hashable {
                  .number(7), .number(8), .gap(false) ]
     }
 
-    static var randomized: [Piece] {
+    static var newGame: [Piece] {
         var shuffled: [Piece]
 
         repeat {
